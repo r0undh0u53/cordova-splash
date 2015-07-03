@@ -17,34 +17,47 @@ var getPlatforms = function (projectName) {
     platforms.push({
         name : 'ios',
         // TODO: use async fs.exists
-        isAdded : fs.existsSync('platforms/ios'),
-        splashPath : 'platforms/ios/' + projectName + '/Resources/splash/',
+        isAdded : fs.existsSync('res/screen/ios'),
+        splashPath : 'res/screen/ios/',
         splash : [
-            { name : 'Default-568h@2x~iphone.png',    width : 640,  height : 1136 },
-            { name : 'Default-667h.png',              width : 750,  height : 1334 },
-            { name : 'Default-736h.png',              width : 1242,  height : 2208 },
-            { name : 'Default-Landscape-736h.png',    width : 2208,  height : 1242 },
-            { name : 'Default-Landscape@2x~ipad.png', width : 2048, height : 1536 },
-            { name : 'Default-Landscape~ipad.png',    width : 1024, height : 768 },
-            { name : 'Default-Portrait@2x~ipad.png',  width : 1536, height : 2048 },
-            { name : 'Default-Portrait~ipad.png',     width : 768,  height : 1024 },
-            { name : 'Default@2x~iphone.png',         width : 640,  height : 960 },
-            { name : 'Default~iphone.png',            width : 320,  height : 480 },
+            // iPhone Non-Retina (1x)
+            { name : 'screen-iphone-portrait.png',          width : 320,  height : 480 },
+            { name : 'screen-iphone-landscape.png',         width : 480,  height : 320 },
+            // iPhone Retina (2x)
+            { name : 'screen-iphone-portrait-2x.png',       width : 640,  height : 960 },
+            { name : 'screen-iphone-landscape-2x.png',      width : 960,  height : 640 },
+            // iPhone 5 Retina (2x)
+            { name : 'screen-iphone-portrait-568h-2x.png',  width : 640,  height : 1136 },
+            { name : 'screen-iphone-landscape-568h-2x.png', width : 1136, height : 640 },
+            // iPhone 6 (2x)
+            { name : 'screen-iphone-portrait-667h-2x.png',  width : 750,  height : 1334 },
+            { name : 'screen-iphone-landscape-667h-2x.png', width : 1334, height : 750 },
+            // iPhone 6 Plus (3x)
+            { name : 'screen-iphone-portrait-736h-3x.png',  width : 1242, height : 2208 },
+            { name : 'screen-iphone-landscape-736h-3x.png', width : 2208, height : 1242 },
+
+            // iPad Non-Retina (1x)
+            { name : 'screen-ipad-portrait.png',            width : 768,  height : 1024 },
+            { name : 'screen-ipad-landscape.png',           width : 1024, height : 768 },
+            // iPad Retina (2x)
+            { name : 'screen-ipad-portrait-2x.png',         width : 1536, height : 2048 },
+            { name : 'screen-ipad-landscape-2x.png',        width : 2048, height : 1536 },
         ]
     });
     platforms.push({
         name : 'android',
-        isAdded : fs.existsSync('platforms/android'),
-        splashPath : 'platforms/android/res/',
+        isAdded : fs.existsSync('res/screen/android'),
+        splashPath : 'res/screen/android/',
         splash : [
-            { name : 'drawable-land-ldpi/screen.png',  width : 320, height: 200 },
-            { name : 'drawable-land-mdpi/screen.png',  width : 480, height: 320 },
-            { name : 'drawable-land-hdpi/screen.png',  width : 800, height: 480 },
-            { name : 'drawable-land-xhdpi/screen.png', width : 1280, height: 720 },
-            { name : 'drawable-port-ldpi/screen.png',  width : 200, height: 320 },
-            { name : 'drawable-port-mdpi/screen.png',  width : 320, height: 480 },
-            { name : 'drawable-port-hdpi/screen.png',  width : 480, height: 800 },
-            { name : 'drawable-port-xhdpi/screen.png', width : 720, height: 1280 },
+            { name : 'screen-ldpi-landscape.png',  width : 320, height: 200 },
+            { name : 'screen-mdpi-landscape.png',  width : 480, height: 320 },
+            { name : 'screen-hdpi-landscape.png',  width : 800, height: 480 },
+            { name : 'screen-xhdpi-landscape.png', width : 1280, height: 720 },
+
+            { name : 'screen-ldpi-portrait.png',  width : 200, height: 320 },
+            { name : 'screen-mdpi-portrait.png',  width : 320, height: 480 },
+            { name : 'screen-hdpi-portrait.png',  width : 480, height: 800 },
+            { name : 'screen-xhdpi-portrait.png', width : 720, height: 1280 },
         ]
     });
     // TODO: add all platforms
@@ -59,7 +72,7 @@ var getPlatforms = function (projectName) {
  */
 var settings = {};
 settings.CONFIG_FILE = 'config.xml';
-settings.SPLASH_FILE   = 'splash.png';
+settings.SPLASH_FILE   = 'splash-2208.png';
 
 /**
  * @var {Object} console utils
