@@ -49,15 +49,19 @@ var getPlatforms = function (projectName) {
         isAdded : fs.existsSync('res/screen/android'),
         splashPath : 'res/screen/android/',
         splash : [
-            { name : 'screen-ldpi-landscape.png',  width : 320, height: 200 },
-            { name : 'screen-mdpi-landscape.png',  width : 480, height: 320 },
-            { name : 'screen-hdpi-landscape.png',  width : 800, height: 480 },
-            { name : 'screen-xhdpi-landscape.png', width : 1280, height: 720 },
+            { name : 'screen-ldpi-landscape.png',    width : 320,  height: 200  },
+            { name : 'screen-mdpi-landscape.png',    width : 480,  height: 320  },
+            { name : 'screen-hdpi-landscape.png',    width : 800,  height: 480  },
+            { name : 'screen-xhdpi-landscape.png',   width : 1280, height: 720  },
+            { name : 'screen-xxhdpi-landscape.png',  width : 1440, height: 960  },
+            { name : 'screen-xxxhdpi-landscape.png', width : 1920, height: 1280 },
 
-            { name : 'screen-ldpi-portrait.png',  width : 200, height: 320 },
-            { name : 'screen-mdpi-portrait.png',  width : 320, height: 480 },
-            { name : 'screen-hdpi-portrait.png',  width : 480, height: 800 },
-            { name : 'screen-xhdpi-portrait.png', width : 720, height: 1280 },
+            { name : 'screen-ldpi-portrait.png',     width : 200,  height: 320  },
+            { name : 'screen-mdpi-portrait.png',     width : 320,  height: 480  },
+            { name : 'screen-hdpi-portrait.png',     width : 480,  height: 800  },
+            { name : 'screen-xhdpi-portrait.png',    width : 720,  height: 1280 },
+            { name : 'screen-xxhdpi-portrait.png',   width : 960,  height: 1440 },
+            { name : 'screen-xxxhdpi-portrait.png',  width : 1280, height: 1920 },
         ]
     });
     // TODO: add all platforms
